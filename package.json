@@ -1,0 +1,28 @@
+{
+  "name": "formate-json",
+  "version": "0.1.0",
+  "description": "Just pass any data to it, it will format JSON for you.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel ./src/index.js -o ./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chvin/formateJSON.git"
+  },
+  "keywords": [
+    "formate",
+    "json"
+  ],
+  "author": "Chvin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chvin/formateJSON/issues"
+  },
+  "homepage": "https://github.com/chvin/formateJSON#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
