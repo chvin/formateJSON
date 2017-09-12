@@ -62,7 +62,7 @@ You will get the same result.
 ```
 
 ## Any type of result
-```
+``` javascript
 const fj = require('formate-json');
 
 console.log(fj(1)); // '1'
