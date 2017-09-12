@@ -1,6 +1,6 @@
 {
   "name": "formate-json",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Just pass any data to it, it will format JSON for you.",
   "main": "lib/index.js",
   "scripts": {
