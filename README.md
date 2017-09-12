@@ -6,7 +6,7 @@ $ npm install formate-json
 ```
 
 Usage
-```
+``` javascript
 const fj = require('formate-json');
 
 const testObj = {
@@ -37,7 +37,7 @@ console.log(fj(strTestObj));
 ```
 
 You will get the same result.
-```
+``` javascript
 {
    "msg": "",
    "success": true,
