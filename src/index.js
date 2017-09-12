@@ -5,20 +5,6 @@ const format = (elm, level = 0, space = 4) => {
         return new Array((level + 1) * space).join(' ');
     }
     switch (getType(elm)) {
-        case 'null':
-            return `${elm}`;
-        case 'undefined':
-            return 'null';
-        case 'number':
-            return `${elm}`;
-        case 'string':
-            return `"${elm}"`;
-        case 'boolean':
-            return `${elm}`;
-        case 'date':
-            return JSON.stringify(elm);
-        case 'regexp': // {}
-            return JSON.stringify(elm);
         case 'object': {
             let o = '';
             const keys = Object.keys(elm);
@@ -67,6 +53,7 @@ const format = (elm, level = 0, space = 4) => {
             o += ']';
             return o;
         }
+        default: return JSON.stringify(elm);
     }
     return '';
 };
@@ -77,14 +64,8 @@ function getType(e){
 
 module.exports = (elm, space = 4) => {
     const type = getType(elm);
-
     switch (type) {
-        case 'number': // number
-            return format(elm, 0, space);
         case 'object': {
-            if (typeof elm === 'symbol') {
-                return undefined;
-            }
             return format(JSON.parse(JSON.stringify(elm)), 0, space);
         }
         case 'array': {
@@ -101,6 +82,10 @@ module.exports = (elm, space = 4) => {
             } catch (e) {
                 return format(elm, 0, space);
             }
+        }
+        default: {
+            // undefined, symbol, null, number, string, boolean, date, regexp
+            return format(elm, 0, space);
         }
     }
 };

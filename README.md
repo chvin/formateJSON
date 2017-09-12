@@ -5,7 +5,7 @@ Just pass any data to it, it will format JSON for you.
 $ npm install formate-json
 ```
 
-Usage
+# Usage
 ``` javascript
 const fj = require('formate-json');
 
@@ -37,7 +37,7 @@ console.log(fj(strTestObj));
 ```
 
 You will get the same result.
-``` javascript
+```
 {
    "msg": "",
    "success": true,
@@ -59,4 +59,44 @@ You will get the same result.
    "someDate": "2017-09-12T07:57:03.980Z",
    "someNull": null
 }
+```
+
+## Any type of result
+```
+const fj = require('formate-json');
+
+console.log(fj(1)); // '1'
+
+console.log(fj(null)); // 'null'
+
+console.log(fj(undefined)); // undefined
+
+console.log(fj('abc')); // '"abc"'
+
+console.log(fj(/reg/)); // '{}'
+
+console.log(fj(new Date)); // '2017-09-12T09:09:49.460Z'
+
+console.log(fj(Symbol())); // undefined
+
+console.log(fj({a: 'a', b: 'b'}));
+/*
+`
+{
+   "a": "a",
+   "b": "b"
+}
+`
+*/
+
+console.log(fj([1, 2, 3]));
+/*
+`
+[
+   1,
+   2,
+   3
+]
+`
+*/
 ```
