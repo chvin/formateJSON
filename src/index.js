@@ -1,4 +1,4 @@
-// https://github.com/chvin/formateJSON
+// https://github.com/chvin/formatter-json
 
 const format = (elm, level = 0, space = 4) => {
     const getSpace = (level, space) => {
