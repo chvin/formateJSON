@@ -1,8 +1,10 @@
 // https://github.com/chvin/formatter-json
 
-const format = (elm, level = 0, space = 4) => {
+const defaultSpace = 2;
+
+const format = (elm, level = 0, space = defaultSpace) => {
     const getSpace = (level, space) => {
-        return new Array((level + 1) * space).join(' ');
+        return new Array((level + 1) * space + 1).join(' ');
     }
     switch (getType(elm)) {
         case 'object': {
@@ -62,7 +64,7 @@ function getType(e){
     return Object.prototype.toString.call(e).slice(8, -1).toLowerCase()
 }
 
-module.exports = (elm, space = 4) => {
+module.exports = (elm, space = defaultSpace) => {
     const type = getType(elm);
     switch (type) {
         case 'object': {
